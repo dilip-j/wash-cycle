@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "crazygirls",
+    "slug": "crazygirls",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.crazygirls.app",
+      "supportsTablet": true
+
+    },
+    "android": {
+      "package": "com.crazygirls.crazygirls",
+      "versionCode": 1,
+      "useNextNotificationsApi": true
+    }
+  }
+}
