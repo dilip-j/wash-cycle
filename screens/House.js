@@ -1,5 +1,6 @@
 import React from 'react';
 import {View,Text,ScrollView,SafeAreaView,StyleSheet,TouchableHighlight,FlatList} from 'react-native';
+import {MaterialIcons} from '@expo/vector-icons';
 import Footer from './Footer';
 const Data=[
  {no:'3 ', price:'£7.75/pp',total:'£23.25'},
@@ -18,7 +19,10 @@ export default function House(props){
 return(
 <SafeAreaView style={styles.container}>
     <ScrollView>
-    <Text style={styles.text}>You have 0 item in basket </Text>
+    <View style={{ flexDirection: 'row' ,justifyContent:'space-between' }}>
+                    <Text style={styles.text} >You have 0 items in basket  </Text>
+                    <MaterialIcons name='shopping-basket' size={40} color="#5edbcd" />
+                </View>
             <Text style={styles.text}>Step 1 out of 9</Text>
             <Text style={styles.text}>Choose a house discount type </Text>
       <View style={{borderWidth:1,flexDirection:'column',marginTop:'10%',marginLeft:'15%',marginRight:'15%',justifyContent:'center',alignItems:'center'}}>

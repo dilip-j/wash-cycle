@@ -1,6 +1,7 @@
 import React from 'react';
 import {View,StyleSheet,ScrollView,SafeAreaView,Text,TouchableHighlight,FlatList,Image} from 'react-native';
 import Footer from './Footer';
+import {MaterialIcons} from '@expo/vector-icons'
 const Data=[
     {weight:' 4 kg clothes', work:'Wash,Dry,Fold', price: '£9.00'},
     {weight:'6 kg clothes', work:'Wash,Dry,Fold', price: '£11.25'},
@@ -36,11 +37,14 @@ export default function Standalone(props){
     return(
         <SafeAreaView style={ styles.container}>
             <ScrollView>
-           <Text style={styles.text}>You have 0 item in basket </Text>
+            <View style={{ flexDirection: 'row' ,justifyContent:'space-between' }}>
+                    <Text style={styles.text} >You have 0 items in basket  </Text>
+                    <MaterialIcons name='shopping-basket' size={40} color="#5edbcd" />
+                </View>
             <Text style={styles.text}>Step 1 out of 9</Text>
             <View style={styles.type}>
                 <Text style={styles.text}>Choose a laundry load type</Text>
-                <TouchableHighlight style={styles.touchbtn}>
+                <TouchableHighlight style={styles.touchbtn} onPress={()=>props.navigation.navigate('Calculator')}>
                     <Text style={styles.touctext}>laundry calculator</Text>
                 </TouchableHighlight>
                 </View>

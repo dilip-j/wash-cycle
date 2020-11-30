@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,49 +13,51 @@ import Profile from './screens/Profile';
 import NewOrder from './screens/NewOrder';
 import Standalone from './screens/Standalone';
 import House from './screens/House';
+import Bundle from './screens/Bundle';
+import Calculator from './screens/Calculator';
 
 
-const Tab= createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 
-function NavTab(){
+function NavTab() {
   return (
-  
-    <Tab.Navigator 
-    
-    screenOptions={({ route }) => ({
-      tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
 
-        if (route.name === 'Orders') {
-          iconName = focused ? 'ios-list' : 'ios-list';
-        } else if (route.name === 'Profile') {
-          iconName = focused ? 'ios-person' : 'ios-person';
-        }
-        else if (route.name === 'NewOrder') {
-          iconName = focused ? 'ios-add' : 'ios-add';
-        }
+    <Tab.Navigator
 
-        // You can return any component that you like here!
-        return <Ionicons name={iconName} size={30} color={color} />;
-      },
-    })}
-    tabBarOptions={{
-      activeTintColor: '#96c5e0',
-      inactiveTintColor: 'gray',
-    }}
-  >
-    
-    
-    
-        <Tab.Screen name="Orders" component={Orders} />
-        <Tab.Screen name="Profile" component={Profile} />
-       <Tab.Screen name="NewOrder" component={NewOrder} /> 
-      
-    
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Orders') {
+            iconName = focused ? 'ios-list' : 'ios-list';
+          } else if (route.name === 'Profile') {
+            iconName = focused ? 'ios-person' : 'ios-person';
+          }
+          else if (route.name === 'NewOrder') {
+            iconName = focused ? 'ios-add' : 'ios-add';
+          }
+
+          // You can return any component that you like here!
+          return <Ionicons name={iconName} size={30} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: '#96c5e0',
+        inactiveTintColor: 'gray',
+      }}
+    >
+
+
+
+      <Tab.Screen name="Orders" component={Orders} />
+      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="NewOrder" component={NewOrder} />
+
+
 
     </Tab.Navigator>
-    
+
 
   )
 
@@ -63,35 +65,37 @@ function NavTab(){
 }
 
 
-const MainStack= createStackNavigator()
-function MainNav(){
-return (
-  
+const MainStack = createStackNavigator()
+function MainNav() {
+  return (
+
     <MainStack.Navigator initialRouteName='Signup'>
-           <MainStack.Screen name="NavTab" component={Orders} />
-        <MainStack.Screen name="Signup" component={Signup} />
-        <MainStack.Screen name='Login' component={Login}/>
-        <MainStack.Screen name='Orders' component={Orders}/>
-        <MainStack.Screen name='Profile' component={Profile}/>
-        <MainStack.Screen name='NewOrder' component={NewOrder}/>
-        <MainStack.Screen name='Standalone' component={Standalone}/>
-        <MainStack.Screen name='House' component={House}/>
-        
-  </MainStack.Navigator>
+      <MainStack.Screen name="NavTab" component={Orders} />
+      <MainStack.Screen name="Signup" component={Signup} />
+      <MainStack.Screen name='Login' component={Login} />
+      <MainStack.Screen name='Orders' component={Orders} />
+      <MainStack.Screen name='Profile' component={Profile} />
+      <MainStack.Screen name='NewOrder' component={NewOrder} />
+      <MainStack.Screen name='Standalone' component={Standalone} />
+      <MainStack.Screen name='House' component={House} />
+      <MainStack.Screen name='Bundle' component={Bundle} />
+      <MainStack.Screen name='Calculator' component={Calculator} />
 
-    
+    </MainStack.Navigator>
 
-)
+
+
+  )
 }
 
 export default function App() {
   return (
-       
-      
-      <NavigationContainer>
-        < MainNav />
-      </NavigationContainer>
-      
-  
+
+
+    <NavigationContainer>
+      < MainNav />
+    </NavigationContainer>
+
+
   );
 }
