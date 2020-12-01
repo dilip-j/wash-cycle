@@ -5,11 +5,20 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { MaterialIcons } from '@expo/vector-icons';
 //import {Card} from 'react-native-paper';
 import Footer from './Footer';
+import Header from './header';
 
+var r1 = '#5ae8ed';
+var r2 = 'black';
 export default function NewOrder(props) {
     const [value, setValue] = useState(false);
     const [pageValue, setPageValue] = useState('');
+    const [red, setClr] = useState(false);
     const [data, setData] = useState('select your order')
+
+    const inValue = () => {
+        setClr(true)
+        setData('next')
+    }
     const select = () => {
 
 
@@ -22,7 +31,7 @@ export default function NewOrder(props) {
 
         }
         else if (pageValue !== '' && pageValue === 'House') {
-
+            
             console.log("in if of select");
             setData('next')
             props.navigation.navigate('House')
@@ -41,6 +50,7 @@ export default function NewOrder(props) {
 
     return (
         <SafeAreaView style={styles.container}>
+            <Header />
             <ScrollView>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={styles.uptext} >You have 0 items in basket  </Text>
@@ -69,7 +79,7 @@ export default function NewOrder(props) {
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => setPageValue('House')}>
-                    <Card style={styles.card} >
+                    <Card style={{...styles.card,borderColor: red ? r1 : r2}} onPress={inValue} >
                         < Image style={styles.img} source={require('../assets/house.png')} />
                         <Text style={styles.text} /* onPress={() => props.navigation.navigate('House')} */>House</Text>
                         <Text style={styles.innertext}>Get a discount if you're  doing laundry for the whole house! </Text>
@@ -93,13 +103,14 @@ export default function NewOrder(props) {
 
                     </Card>
                 </TouchableOpacity>
+                 
+                <TouchableHighlight  style={styles.touchbtn} onPress={select}>
+                
+                    <Text style={styles.touctext}>{data}</Text>
 
-                <Button style={styles.touchbtn}
-                    title={data}
-
-                    onPress={select}
-
-                />
+                </TouchableHighlight>
+        
+            
 
                 < Footer />
             </ScrollView>
@@ -158,12 +169,12 @@ const styles = StyleSheet.create({
 
     touchbtn: {
         borderWidth: 1,
-        borderRadius: 10,
-        backgroundColor: '#42f5f2',
+        borderRadius: 4,
+        borderColor:'#5aede8',
         height: 50,
-        width: '50%',
+        width: '80%',
         marginTop: '10%',
-        marginLeft: '25%'
+        marginLeft: '10%'
     },
 
     uptext: {

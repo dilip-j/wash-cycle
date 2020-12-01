@@ -1,30 +1,34 @@
 import React from 'react';
-import {Text,View,SafeAreaView,ScrollView,StyleSheet,TouchableHighlight,TextInput} from 'react-native';
-export default function Forgot(props){
+import { Text, View, SafeAreaView, ScrollView, StyleSheet, TouchableHighlight, TextInput, Image } from 'react-native';
+export default function Forgot(props) {
 
-    return(
-        <SafeAreaView>
+    return (
+        <SafeAreaView style={styles.container}>
             <ScrollView>
 
-         <Text>EMAIL ADDRESS</Text>
-         <TextInput />
-         <View style={styles.Signupview}>
-         <TouchableHighlight style={styles.touchbtn} >
-            <Text style={styles.touctext}>Reset</Text>
+                < Image style={styles.img} source={require('../assets/logo-white.png')} />
+                <Text style={{ fontSize: 35, fontWeight: 'bold', justifyContent: 'center', marginLeft: '25%', color: 'white' }}> WashCycle</Text>
+                <Text style={{ fontSize: 15, justifyContent: 'center', marginLeft: '28%', color: '#58b09a' }}>Delivery Laundry Service</Text>
 
-         </TouchableHighlight>
-         </View>
-         <View style={styles.btnview}>
-        <TouchableHighlight style={styles.touchbtn}>
-          <Text style={styles.touctext}>Sign up</Text>
-          </TouchableHighlight>
-        
-          <TouchableHighlight style={styles.touchbtn} >
-          <Text style={styles.touctext}>Login</Text>
-          </TouchableHighlight>
-        
-        
-        </View>
+                <Text style={styles.text}>EMAIL ADDRESS</Text>
+                <TextInput style={styles.inputtext} />
+                <View style={styles.Signupview}>
+                    <TouchableHighlight style={styles.touchbtn} >
+                        <Text style={styles.touctext}>Reset</Text>
+
+                    </TouchableHighlight>
+                </View>
+                <View style={styles.btnview}>
+                    <TouchableHighlight style={styles.touchbtn}>
+                        <Text style={styles.touctext}>Sign up</Text>
+                    </TouchableHighlight>
+
+                    <TouchableHighlight style={styles.touchbtn} >
+                        <Text style={styles.touctext}>Login</Text>
+                    </TouchableHighlight>
+
+
+                </View>
 
             </ScrollView>
 
@@ -33,34 +37,66 @@ export default function Forgot(props){
 
     )
 }
-const styles= StyleSheet.create({
-container:{
-    flex:1
-},
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        
+        backgroundColor: '#1c1a13'
+    },
 
-Signupview:{
-    justifyContent:'center'  ,
-    alignItems:'center' 
-   },
-   btnview:{
-       flexDirection:'row',
-       justifyContent:'space-between',
-   
-   },
-   touctext:{
-       textAlign:'center',
-       marginTop:10
-       
-   
-   },
-   
-   touchbtn:{
-       borderWidth:1,
-      borderRadius:50,
-      backgroundColor:'#42f5f2',
-      height:50,
-      width:100
-   }
+    Signupview: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop:'10%'
+    },
 
+    text: {
+        color: 'white',
+        marginLeft: '5%',
+        padding: 10,
+        fontSize: 20
+
+    },
+    inputtext: {
+        color: 'white',
+        marginLeft: '5%',
+        borderBottomWidth: 1,
+        borderBottomColor: 'white',
+        marginRight: '5%',
+        fontSize: 18
+
+    },
+    btnview: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop:'15%'
+
+    },
+    touctext: {
+        textAlign: 'center',
+        marginTop: 10
+
+
+    },
+
+
+    touchbtn: {
+        borderWidth: 1,
+        borderRadius: 50,
+        backgroundColor: '#42f5f2',
+        height: 50,
+        width: 150
+    },
+    img: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 90,
+        height: 90,
+        marginLeft: '35%',
+        marginRight: '40%',
+        marginTop: '15%',
+        marginBottom: '3%'
+
+    }
 
 });

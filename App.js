@@ -15,6 +15,7 @@ import Standalone from './screens/Standalone';
 import House from './screens/House';
 import Bundle from './screens/Bundle';
 import Calculator from './screens/Calculator';
+import Payment from './screens/payment'
 
 
 const Tab = createBottomTabNavigator();
@@ -69,10 +70,11 @@ const MainStack = createStackNavigator()
 function MainNav() {
   return (
 
-    <MainStack.Navigator initialRouteName='Signup'>
-      <MainStack.Screen name="NavTab" component={Orders} />
+    <MainStack.Navigator screenOptions={{headerShown:false}} initialRouteName='Signup'>
+      <MainStack.Screen name="NavTab" component={Orders}  />
       <MainStack.Screen name="Signup" component={Signup} />
       <MainStack.Screen name='Login' component={Login} />
+      <MainStack.Screen name='Forgot' component={Forgot} />
       <MainStack.Screen name='Orders' component={Orders} />
       <MainStack.Screen name='Profile' component={Profile} />
       <MainStack.Screen name='NewOrder' component={NewOrder} />
@@ -80,6 +82,7 @@ function MainNav() {
       <MainStack.Screen name='House' component={House} />
       <MainStack.Screen name='Bundle' component={Bundle} />
       <MainStack.Screen name='Calculator' component={Calculator} />
+      <MainStack.Screen name='Payment' component={Payment}/>
 
     </MainStack.Navigator>
 

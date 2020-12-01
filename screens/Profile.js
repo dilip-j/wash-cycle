@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView,ScrollView,StyleSheet,View,Text} from 'react-native';
 import Footer from './Footer';
+import Header from './header';
 import {Button} from 'react-native-elements'
 import { TouchableHighlight } from 'react-native-gesture-handler';
 import{FontAwesome} from '@expo/vector-icons'
@@ -8,6 +9,7 @@ import{FontAwesome} from '@expo/vector-icons'
 export default function Profile(props){
     return (
         <SafeAreaView style={styles.container}>
+            <Header />
             <ScrollView>
                 <Text style={styles.headtext}>Your Profile Page </Text>
                  <TouchableHighlight style={styles.btn} >
