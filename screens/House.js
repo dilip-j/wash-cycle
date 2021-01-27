@@ -8,7 +8,7 @@ const Data = [
     { no: '4 ', price: '£7.50/pp', total: '£30.00' },
     { no: '5', price: '£7.50/pp', total: '£37.50' },
     { no: '6 ', price: '£7.00/pp', total: '£42.00' },
-    { no: ' 7', price: '£7.00/pp', total: '£49.00' },
+    { no: '7', price: '£7.00/pp', total: '£49.00' },
     { no: '8 ', price: '£6.50/pp', total: '£52.00' },
     { no: '9 ', price: '£6.50/pp', total: '£58.50' },
 
